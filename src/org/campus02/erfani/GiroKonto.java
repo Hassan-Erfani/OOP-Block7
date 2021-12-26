@@ -2,6 +2,7 @@ package org.campus02.erfani;
 
 public class GiroKonto extends Konto{
     private double limit;
+    private  double tmp = 0;
 
     public GiroKonto(String inhaber, double limit) {
         super(inhaber);
@@ -13,6 +14,15 @@ public class GiroKonto extends Konto{
     }
 
     public void auszahlen(double value) {
-        super.auszahlen(value);
+
+        // check if limit is reached
+        if (tmp + value <= this.limit) {
+            super.auszahlen(value);
+            tmp +=value;
+            return;
+        }
+
+        System.out.println("Auszahlung nicht möglich, Limit überschritten");
+        System.out.println("Kontostand: " + (int) getKontostand() + "€");
     }
 }
