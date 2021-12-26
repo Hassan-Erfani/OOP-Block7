@@ -22,12 +22,20 @@ public class DemoApp {
         giroKonto.auszahlen(400);*/
 
         // JugendGiroKonto() test
-        JugendGiroKonto jugendGiroKonto = new JugendGiroKonto("John", 1000, 100);
+       /* JugendGiroKonto jugendGiroKonto = new JugendGiroKonto("John", 1000, 100);
 
         jugendGiroKonto.einzahlen(400);
 
         jugendGiroKonto.auszahlen(100);
         jugendGiroKonto.auszahlen(1);
-        jugendGiroKonto.auszahlen(101);
+        jugendGiroKonto.auszahlen(101);*/
+
+        SparKonto sparKonto = new SparKonto("Felix");
+
+        sparKonto.einzahlen(5);
+
+        sparKonto.auszahlen(10);
+        sparKonto.auszahlen(5);
+        sparKonto.auszahlen(10);
     }
 }
