@@ -13,6 +13,13 @@ public class JugendGiroKonto extends GiroKonto{
     }
 
     public void auszahlen(double value) {
-        super.auszahlen(value);
+
+        if (value <= this.buchungslimit) {
+            super.auszahlen(value);
+            return;
+        }
+
+        System.out.println("Buchungslimit überschritten");
+        System.out.println("Kontostand: " + (int) getKontostand() + "€");
     }
 }
